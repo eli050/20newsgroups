@@ -12,6 +12,7 @@ DAL:SubDAL|None = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    """Initialize the consumer service and DAL."""
     global DAL
     DAL = SubDAL(MongoClient(URI), COLLECTION_NAME)
     consumer_service = InterestingConsumer("interesting_topic")
@@ -28,10 +29,12 @@ app = FastAPI(lifespan=lifespan)
 
 @app.get("/")
 def health_check():
+    """Health check endpoint."""
     return {"status": "ok"}
 
 @app.get("/data")
 async def get_data():
+    """Fetch data from the DAL."""
     try:
         assert DAL is not None
         data =  DAL.get_articles()

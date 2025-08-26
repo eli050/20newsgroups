@@ -8,7 +8,9 @@ from pprint import pprint
 URI = "mongodb://mongodb:27017"
 COLLECTION_NAME = "interesting_data"
 class InterestingConsumer(Consumer):
+    """Consumer for interesting articles."""
     def _consume(self):
+        """Consume messages and store them in MongoDB."""
         dal = SubDAL(client=MongoClient(URI), collection_name=COLLECTION_NAME)
         for message in self.consumer:
             pprint(message.offset)

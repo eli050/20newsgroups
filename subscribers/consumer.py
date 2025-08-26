@@ -5,6 +5,7 @@ import json
 
 
 class Consumer:
+    """Kafka Consumer"""
     def __init__(self, topic, bootstrap_servers="broker:9092", group_id="my-group"):
         self.consumer = KafkaConsumer(
             topic,
@@ -16,9 +17,11 @@ class Consumer:
         self.thread = threading.Thread(target=self._consume, daemon=True)
 
     def start(self):
+        """Start the consumer thread."""
         self.thread.start()
 
 
     def _consume(self):
+        """Consume messages from the Kafka topic."""
         pass
 

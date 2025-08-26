@@ -3,6 +3,7 @@ import json
 
 
 class Producer:
+    """Kafka Producer"""
     def __init__(self,bootstrap_servers= 'broker:9092',
                  encode = 'utf-8'):
         self.producer = KafkaProducer(bootstrap_servers=[bootstrap_servers],
@@ -10,6 +11,7 @@ class Producer:
                              json.dumps(x).encode(encode))
 
     def publish_message(self,topic,message):
+        """Publish a message to a Kafka topic."""
         self.producer.send(topic, message)
 
 

@@ -8,6 +8,7 @@ app = FastAPI()
 
 @app.get("/publish_interesting")
 def publish_message():
+    """Publish a message to the interesting_topic."""
     producer = Producer()
     dr = DataReader()
     data = dr.read_interesting_data()
@@ -15,6 +16,7 @@ def publish_message():
 
 @app.get("/publish_not_interesting")
 def publish_not_interesting_message():
+    """Publish a message to the not_interesting_topic."""
     producer = Producer()
     dr = DataReader()
     data = dr.read_not_interesting_data()
