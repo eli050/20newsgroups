@@ -4,7 +4,7 @@ from subscribers.DAL import SubDAL
 from subscribers.consumer import Consumer
 
 
-URI = "mongodb://localhost:27017"
+URI = "mongodb://mongodb:27017"
 COLLECTION_NAME = "not_interesting_data"
 class NotInterestingConsumer(Consumer):
     def _consume(self):

@@ -3,9 +3,9 @@ from datetime import datetime
 from subscribers.DAL import SubDAL
 from subscribers.consumer import Consumer
 from pprint import pprint
-import time
 
-URI = "mongodb://localhost:27017"
+
+URI = "mongodb://mongodb:27017"
 COLLECTION_NAME = "interesting_data"
 class InterestingConsumer(Consumer):
     def _consume(self):

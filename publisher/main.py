@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from publisher.data_reader import DataReader
-from publisher.producer import Producer
+from data_reader import DataReader
+from producer import Producer
 
 app = FastAPI()
 

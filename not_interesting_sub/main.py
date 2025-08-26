@@ -5,7 +5,7 @@ from not_interesting_sub.cons import NotInterestingConsumer
 from subscribers.DAL import SubDAL
 import uvicorn
 
-URI = "mongodb://localhost:27017"
+URI = "mongodb://mongodb:27017"
 COLLECTION_NAME = "not_interesting_data"
 
 DAL:SubDAL|None = None

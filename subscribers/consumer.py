@@ -5,7 +5,7 @@ import json
 
 
 class Consumer:
-    def __init__(self, topic, bootstrap_servers="localhost:9092", group_id="my-group"):
+    def __init__(self, topic, bootstrap_servers="broker:9092", group_id="my-group"):
         self.consumer = KafkaConsumer(
             topic,
             bootstrap_servers=[bootstrap_servers],

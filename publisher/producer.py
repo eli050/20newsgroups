@@ -3,7 +3,7 @@ import json
 
 
 class Producer:
-    def __init__(self,bootstrap_servers= 'localhost:9092',
+    def __init__(self,bootstrap_servers= 'broker:9092',
                  encode = 'utf-8'):
         self.producer = KafkaProducer(bootstrap_servers=[bootstrap_servers],
                              value_serializer=lambda x:

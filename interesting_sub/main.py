@@ -5,7 +5,7 @@ from pymongo import MongoClient
 from interesting_sub.cons import InterestingConsumer
 from subscribers.DAL import SubDAL
 
-URI = "mongodb://localhost:27017"
+URI = "mongodb://mongodb:27017"
 COLLECTION_NAME = "interesting_data"
 
 DAL:SubDAL|None = None
