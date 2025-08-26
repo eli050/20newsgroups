@@ -7,10 +7,9 @@ import json
 class Consumer:
     def __init__(self, topic, bootstrap_servers="localhost:9092", group_id="my-group"):
         self.consumer = KafkaConsumer(
-            topic = topic,
+            topic,
             bootstrap_servers=[bootstrap_servers],
             auto_offset_reset="earliest",
-            enable_auto_commit=True,
             group_id=group_id,
             value_deserializer=lambda x: json.loads(x.decode("utf-8"))
         )

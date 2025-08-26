@@ -31,7 +31,7 @@ def health_check():
     return {"status": "ok"}
 
 @app.get("/data")
-def get_data():
+async def get_data():
     try:
         assert DAL is not None
         return DAL.get_articles()

@@ -31,12 +31,13 @@ def health_check():
     return {"status": "ok"}
 
 @app.get("/data")
-def get_data():
+async def get_data():
     try:
         assert DAL is not None
-        return DAL.get_articles()
+        data =  DAL.get_articles()
+        return data
     except AssertionError as e:
-        return {"error": "Data Access Layer not initialized", "details": str(e)}
+        raise {"error": "Data Access Layer not initialized", "details": str(e)}
 
 
 if __name__ == '__main__':
