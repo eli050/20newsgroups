@@ -3,5 +3,6 @@ uvicorn==0.30.6
 pymongo==4.8.0
 kafka-python
 scikit-learn
+pydantic
 
 
